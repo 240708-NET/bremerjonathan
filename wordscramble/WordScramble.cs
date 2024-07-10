@@ -1,13 +1,12 @@
-﻿
-class Program
+﻿class WordScramble
 {
     static void Main(string[] args)
     {
         string word = GetWord();
         string scrambledWord = ScrambleWord(word);
         string? answer = null;
-
-        for(bool match = false; !match;)
+        
+        for (bool match = false; !match;)
         {
             Console.Write("Enter the word for scrambled letters '{0}': ", scrambledWord);
             answer = Console.ReadLine();
