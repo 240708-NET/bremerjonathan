@@ -1,6 +1,5 @@
 ﻿namespace wordscramble;
 
-using repository;
 using wordscramble.service;
 using static System.StringComparison;
 using static wordscramble.service.Puzzler;
