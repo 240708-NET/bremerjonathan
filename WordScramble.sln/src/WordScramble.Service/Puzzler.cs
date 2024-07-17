@@ -1,6 +1,7 @@
-namespace wordscramble.service;
+namespace WordScramble.Service;
 
-using wordscramble.repository;
+using WordScramble.Model;
+using WordScramble.Repository;
 
 public class Puzzler {
     IWordRepository wordRepository = new LsvWordRepository();
@@ -9,11 +10,6 @@ public class Puzzler {
         var word = wordRepository.PickWord();
         var wordPermutation = Permute(word);
         return new Puzzle(wordPermutation, word);
-    }
-
-    public class Puzzle(string wordPermutation, string word)
-    {
-        public readonly string wordPermutation = wordPermutation, word = word;
     }
 
     private static string Permute(string str)

@@ -1,4 +1,4 @@
-namespace wordscramble.repository;
+namespace WordScramble.Repository;
 
 using static System.AppDomain;
 using static System.IO.Path;

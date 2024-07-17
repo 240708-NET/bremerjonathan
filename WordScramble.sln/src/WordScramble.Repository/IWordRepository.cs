@@ -1,4 +1,4 @@
-namespace wordscramble.repository;
+namespace WordScramble.Repository;
 
 public interface IWordRepository
 {
