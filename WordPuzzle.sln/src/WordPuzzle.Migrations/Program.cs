@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = "Server=localhost;User=sa;Password=NotPassword123;Database=WordPuzzle;TrustServerCertificate=true;"; //builder.Configuration["ConnectionString"];
 
-// builder.Services.AddDbContext<WordPuzzleDbContext>(options => options.UseSqlServer(connectionString)); 
+builder.Services.AddDbContext<WordPuzzleDbContext>(options => options.UseSqlServer(connectionString)); 
 // var context = new AppDbContext(connectionString);
 // var userRepository = new UserRepository(context);
 // var wordRepository = new WordRepository(context);

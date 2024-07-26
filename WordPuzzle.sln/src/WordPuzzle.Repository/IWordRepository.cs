@@ -7,4 +7,6 @@ public interface IWordRepository
     Word GetAnyWord();
     int AddWord(Word word);
     int AddWords(ISet<Word> words);
+
+    int RemoveWord(string word);
 }

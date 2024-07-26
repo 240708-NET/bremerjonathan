@@ -25,4 +25,12 @@ public class WordRepository(AppDbContext context) : IWordRepository
         return _context.Words.FromSql(sql).First();
     }
 
+    public int RemoveWord(string word)
+    {
+        var _word = _context.Words.SingleOrDefault(w => w.Spelling.Equals(word));
+        if(_word == null)
+            return 0;
+        _context.Words.Remove(_word);
+        return _context.SaveChanges();
+    }
 }

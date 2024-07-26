@@ -1,5 +1,9 @@
 ﻿namespace WordPuzzle.Model;
 
+using static System.String;
+using static System.Array;
+using static System.Random;
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -49,7 +53,7 @@ public class Word(string spelling, int userId) : EntityBase
 
     private void ValidateStoredAlphabetizedSpelling(string storedValue)
     {
-        if(string.IsNullOrWhiteSpace(storedValue))
+        if(IsNullOrWhiteSpace(storedValue))
         {
             throw new ArgumentException("Stored alphabetized spelling cannot be blank");
         }
@@ -70,14 +74,14 @@ public class Word(string spelling, int userId) : EntityBase
     private static string ToAlphabetizedSpelling(string spelling)
     {
         char[] chars = spelling.ToCharArray();
-        Array.Sort(chars);
+        Sort(chars);
         return new string(chars);
     }
 
     private static string Shuffle(string spelling)
     {
         char[] chars = spelling.ToCharArray();
-        Random.Shared.Shuffle(chars);
+        Shared.Shuffle(chars);
         return new string(chars);
     }
    
